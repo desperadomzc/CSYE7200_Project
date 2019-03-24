@@ -9,13 +9,15 @@ public class HelloOpencv {
 
     public ImageUtils binarize(ImageUtils iu) {
         Mat image = iu.getMat();
-        Imgproc.cvtColor(image,image,Imgproc.COLOR_BGR2GRAY);
-        Imgproc.adaptiveThreshold(image,image,255,Imgproc.ADAPTIVE_THRESH_MEAN_C,Imgproc.THRESH_BINARY_INV,25,10);
-//        Imgcodecs.imwrite("C:\\Users\\Administrator\\Desktop\\img-a.jpg",image);
-        return iu;
+        ImageUtils bi = new ImageUtils();
+        bi.setMat(new Mat());
+        image.copyTo(bi.getMat());
+        Imgproc.cvtColor(image,bi.getMat(),Imgproc.COLOR_BGR2GRAY);
+        Imgproc.adaptiveThreshold(bi.getMat(),bi.getMat(),255,Imgproc.ADAPTIVE_THRESH_MEAN_C,Imgproc.THRESH_BINARY_INV,25,10);
+        return bi;
     }
 
-    public ImageUtils cutImg(ImageUtils iu) {
+    public Rect cutImg(ImageUtils iu) {
         int upbound = 400, lowerbound = iu.getHeight();
         Boolean containsWhite;
 
@@ -63,12 +65,16 @@ public class HelloOpencv {
                 break;
             }
         }
-        ImageUtils precut = new ImageUtils();
+//        ImageUtils precut = new ImageUtils();
         Rect rect = new Rect(0, upbound, iu.getWidth(), lowerbound - upbound);
-        precut.setMat(new Mat(iu.getMat(), rect));
+//        precut.setMat(new Mat(iu.getMat(), rect));
 
-        return precut;
+        return rect;
     }
+
+//    public int getStartPoint(ImageUtils iu){
+//
+//    }
 
     public static void main(String args[]) {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
@@ -81,7 +87,9 @@ public class HelloOpencv {
         ImageUtils iu = new ImageUtils("images\\origin.jpg");
         ImageUtils bi = h.binarize(iu);
         bi.writeImg("images\\binarized.jpg");
-        h.cutImg(iu).writeImg("images\\cut.jpg");
+        ImageUtils precut = new ImageUtils();
+        precut.setMat(new Mat(iu.getMat(), h.cutImg(bi)));
+        precut.writeImg("images\\cut().jpg");
         /*
         get the RGB number of the color we want.
          */
