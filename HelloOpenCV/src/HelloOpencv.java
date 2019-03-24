@@ -7,6 +7,14 @@ import org.opencv.imgproc.Imgproc;
 public class HelloOpencv {
     private final double[] WHITE = {255.0, 255.0, 255.0};
 
+    public ImageUtils binarize(ImageUtils iu) {
+        Mat image = iu.getMat();
+        Imgproc.cvtColor(image,image,Imgproc.COLOR_BGR2GRAY);
+        Imgproc.adaptiveThreshold(image,image,255,Imgproc.ADAPTIVE_THRESH_MEAN_C,Imgproc.THRESH_BINARY_INV,25,10);
+//        Imgcodecs.imwrite("C:\\Users\\Administrator\\Desktop\\img-a.jpg",image);
+        return iu;
+    }
+
     public ImageUtils cutImg(ImageUtils iu) {
         int upbound = 400, lowerbound = iu.getHeight();
         Boolean containsWhite;
@@ -27,7 +35,7 @@ public class HelloOpencv {
         }
 
         //for lowerbound:
-        for (int k = iu.getHeight()-1; k > upbound; k--) {
+        for (int k = iu.getHeight() - 1; k > upbound; k--) {
             containsWhite = false;
             for (int l = 0; l < iu.getWidth(); l++) {
                 if (iu.getPixel(k, l) == WHITE[0]) {
@@ -42,7 +50,7 @@ public class HelloOpencv {
             }
         }
 
-        for (int k = lowerbound-1; k > upbound; k--) {
+        for (int k = lowerbound - 1; k > upbound; k--) {
             containsWhite = false;
             for (int l = 0; l < iu.getWidth(); l++) {
                 if (iu.getPixel(k, l) == WHITE[0]) {
@@ -59,13 +67,6 @@ public class HelloOpencv {
         Rect rect = new Rect(0, upbound, iu.getWidth(), lowerbound - upbound);
         precut.setMat(new Mat(iu.getMat(), rect));
 
-//        int counter = 0;
-//        for(int i=0;i<400;i++){
-//            for(int j=0;j<iu.getWidth();j++){
-//                //judge this row contains black or not
-//                    iu.setPixel(i,j,white);
-//            }
-//        }
         return precut;
     }
 
@@ -76,9 +77,11 @@ public class HelloOpencv {
 //        Imgproc.cvtColor(image,image,Imgproc.COLOR_BGR2GRAY);
 //        Imgproc.adaptiveThreshold(image,image,255,Imgproc.ADAPTIVE_THRESH_MEAN_C,Imgproc.THRESH_BINARY_INV,25,10);
 //        Imgcodecs.imwrite("C:\\Users\\Administrator\\Desktop\\img-a.jpg",image);
-        ImageUtils iu = new ImageUtils("C:\\Users\\Administrator\\Desktop\\img-a.jpg");
         HelloOpencv h = new HelloOpencv();
-        h.cutImg(iu).writeImg("C:\\Users\\Administrator\\Desktop\\img-b.jpg");
+        ImageUtils iu = new ImageUtils("images\\origin.jpg");
+        ImageUtils bi = h.binarize(iu);
+        bi.writeImg("images\\binarized.jpg");
+        h.cutImg(iu).writeImg("images\\cut.jpg");
         /*
         get the RGB number of the color we want.
          */
