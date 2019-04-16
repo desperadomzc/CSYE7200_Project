@@ -13,5 +13,3 @@ libraryDependencies += "org.apache.spark" %% "spark-core" % "2.4.0"
 libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.4.0"
 
 libraryDependencies += "org.apache.spark" %% "spark-graphx" % "2.4.0"
-
-libraryDependencies += "org.jgrapht" % "jgrapht" % "1.3.0"

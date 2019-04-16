@@ -4,7 +4,7 @@
 		module="pathrecommendation$sources"
 		revision="0.1"
 		status="integration"
-		publication="20190416174858"
+		publication="20190416192509"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
