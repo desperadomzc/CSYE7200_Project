@@ -1,22 +1,28 @@
-import org.apache.spark.SparkContext
+import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib.ShortestPaths
+import org.apache.spark.graphx.lib.ShortestPaths.SPMap
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.rdd.RDD
 object PathRecommendation extends App{
 
-  val sc = SparkContext
-    .getOrCreate()
 
-
-  val ca = GraphLoader.edgeListFile(sc,"data\\roadNet-CA.txt")
-
-  val vertexCount = ca.numVertices
-  val edges = ca.edges
-//  def readGraph(path:String)= {
-//  }
+  def readGraph(path:String,sc:SparkContext)= {
+    GraphLoader.edgeListFile(sc,path)
+  }
 
   override def main(args: Array[String]): Unit = {
-    println(edges.count())
+    val datapath = "data\\roadNet-CA.txt"
+    val testpath = "data\\test.txt"
+    val conf = new SparkConf().setAppName("pathfinder").setMaster("local[*]")
+    val sc = new SparkContext(conf)
+    val ca: Graph[PartitionID, PartitionID] = readGraph(datapath,sc)
+
+    val result = ShortestPaths.run(ca,Seq(0))
+      .vertices
+      .filter({case(vId,_) => vId == 1})
+      .first()._2.get(0).mkString
+
+    println(result)
   }
 }
