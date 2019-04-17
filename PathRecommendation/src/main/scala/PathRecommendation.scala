@@ -14,15 +14,20 @@ object PathRecommendation extends App{
   override def main(args: Array[String]): Unit = {
     val datapath = "data\\roadNet-CA.txt"
     val testpath = "data\\test.txt"
+    val paPath = "data/roadNet-PA.txt"
     val conf = new SparkConf().setAppName("pathfinder").setMaster("local[*]")
     val sc = new SparkContext(conf)
-    val ca: Graph[PartitionID, PartitionID] = readGraph(datapath,sc)
+    val ca: Graph[PartitionID, PartitionID] = readGraph(paPath,sc)
 
     val result = ShortestPaths.run(ca,Seq(0))
       .vertices
       .filter({case(vId,_) => vId == 1})
       .first()._2.get(0).mkString
 
-    println(result)
+//    val component = ca.connectedComponents().vertices
+
+    val sub = ca.subgraph(vpred = (vid, v) => v <= 10)
+
+    println(sub)
   }
 }
