@@ -6,6 +6,7 @@ import org.apache.spark.graphx.lib.ShortestPaths.SPMap
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.rdd.RDD
 
+import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
 case class GraphUtils(graph: Graph[Int, Int]) {
@@ -34,17 +35,19 @@ object PathRecommendation extends App {
   def userData = {
 
     var flag = true
-    while(flag){
+    var from: Int = 0
+    var to: Int = 0
+    while (flag) {
       println("Please input your visiting area(0 ~ 1088092):")
       print("from: ")
-      val from: Int = Source.stdin.bufferedReader().readLine().toInt
+      from = Source.stdin.bufferedReader().readLine().toInt
       print("to: ")
-      val to: Int = Source.stdin.bufferedReader().readLine().toInt
+      to = Source.stdin.bufferedReader().readLine().toInt
 
-      (to - from) match{
-        case _ < 0 => println("from must be less than to, please re-enter: ")
-        case _ > 100000 => println("Too large area, please re-enter the area: ")
-        case _ =>  flag = false
+      val r = to - from match {
+        case r if r < 0 => println("from must be less than to, please re-enter: ")
+        case r if r > 100000 => println("Too large area, please re-enter the area: ")
+        case _ => flag = false
       }
 
     }
@@ -57,7 +60,7 @@ object PathRecommendation extends App {
     val len = Source.stdin.bufferedReader().readLine().toInt
     val pointList = new Array[Int](len)
     for (i <- Range(0, len)) {
-      println("Please enter the No." + (i+1) + " destinations:")
+      println("Please enter the No." + (i + 1) + " destinations:")
       pointList(i) = Source.stdin.bufferedReader().readLine().toInt
     }
     (location, pointList, from, to)
@@ -67,11 +70,8 @@ object PathRecommendation extends App {
     GraphLoader.edgeListFile(sc, path)
   }
 
-
-
-
   override def main(args: Array[String]): Unit = {
-    val data: (PartitionID, Array[PartitionID], Any, Any) = userData
+    val data = userData
     val startpoint = data._1
     val destination = data._2
     val from = data._3
@@ -82,27 +82,27 @@ object PathRecommendation extends App {
     val testpath = "data\\test.txt"
 
     // path for Mac
-    val datapath = "data/roadNet-PA.txt"
-    val testpath = "data/test.txt"
+    val datapathmac = "data/roadNet-PA.txt"
+    val testpathmac = "data/test.txt"
 
     val sc = new SparkContext(new SparkConf().setAppName("pathfinder").setMaster("local[*]"))
-    val ca: Graph[PartitionID, PartitionID] = readGraph(datapath, sc)
+    val pa = readGraph(datapath, sc)
 
-    val gu = new GraphUtils(ca)
+    val gu = new GraphUtils(pa)
 
+    val subgraph = gu.getSubgraph(pa, from, to)
 
+    //    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(startpoint,destination,subgraph).collect
+    val allPath:ArrayBuffer[(VertexId, SPMap)] = new ArrayBuffer[(VertexId, SPMap)]()
 
-    val subgraph = gu.getSubgraph(ca,
+    val buff = destination.toBuffer
 
-    val shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
-      .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkString
+    for(i<-Range(0,destination.length-1)){
+      buff.remove(0)
+      val leftDestination = buff.toArray
+      allPath ++= gu.getShortestPath(destination(i),leftDestination,subgraph).collect
+    }
 
-    val shortPath2 = ShortestPaths.run(subgraph2, Seq(1))
-      .vertices
-      .filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkString
+    print(allPath.mkString)
   }
 }
