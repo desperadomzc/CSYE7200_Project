@@ -32,26 +32,50 @@ case class GraphUtils(graph: Graph[Int, Int]) {
 
 object PathRecommendation extends App {
   def userData = {
+
+    var flag = true
+    while(flag){
+      println("Please input your visiting area(0 ~ 1088092):")
+      print("from: ")
+      val from: Int = Source.stdin.bufferedReader().readLine().toInt
+      print("to: ")
+      val to: Int = Source.stdin.bufferedReader().readLine().toInt
+
+      (to - from) match{
+        case _ < 0 => println("from must be less than to, please re-enter: ")
+        case _ > 100000 => println("Too large area, please re-enter the area: ")
+        case _ =>  flag = false
+      }
+
+    }
+
     println("Please input your location nodeId:")
     val location = Source.stdin.bufferedReader().readLine().toInt
     println("Your location is at Node: No." + location)
+
     println("Please enter the number of destinations today:")
     val len = Source.stdin.bufferedReader().readLine().toInt
     val pointList = new Array[Int](len)
-    for (i <- Range(1, len + 1)) {
-      println("Please enter the No." + i + " destinations:")
+    for (i <- Range(0, len)) {
+      println("Please enter the No." + (i+1) + " destinations:")
       pointList(i) = Source.stdin.bufferedReader().readLine().toInt
     }
-    (location, pointList)
+    (location, pointList, from, to)
   }
 
   def readGraph(path: String, sc: SparkContext) = {
     GraphLoader.edgeListFile(sc, path)
   }
 
+
+
+
   override def main(args: Array[String]): Unit = {
-    val startpoint = userData._1
-    val destination = userData._2
+    val data: (PartitionID, Array[PartitionID], Any, Any) = userData
+    val startpoint = data._1
+    val destination = data._2
+    val from = data._3
+    val to = data._4
 
     // path for Windows
     val datapath = "data\\roadNet-PA.txt"
@@ -63,10 +87,12 @@ object PathRecommendation extends App {
 
     val sc = new SparkContext(new SparkConf().setAppName("pathfinder").setMaster("local[*]"))
     val ca: Graph[PartitionID, PartitionID] = readGraph(datapath, sc)
+
     val gu = new GraphUtils(ca)
 
-    val subgraph1 = gu.getSubgraph(ca, 0, 1000)
-    val subgraph2 = gu.getSubgraph(ca, 0, 10000)
+
+
+    val subgraph = gu.getSubgraph(ca,
 
     val shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
       .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
