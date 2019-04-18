@@ -1,10 +1,7 @@
-import org.apache.avro.SchemaBuilder.ArrayBuilder
-import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib.ShortestPaths
 import org.apache.spark.graphx.lib.ShortestPaths.SPMap
-import org.apache.spark.sql.SparkSession
-import org.apache.spark.rdd.RDD
+import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
@@ -93,14 +90,14 @@ object PathRecommendation extends App {
     val subgraph = gu.getSubgraph(pa, from, to)
 
     //    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(startpoint,destination,subgraph).collect
-    val allPath:ArrayBuffer[(VertexId, SPMap)] = new ArrayBuffer[(VertexId, SPMap)]()
+    val allPath: ArrayBuffer[(VertexId, SPMap)] = new ArrayBuffer[(VertexId, SPMap)]()
 
     val buff = destination.toBuffer
 
-    for(i<-Range(0,destination.length-1)){
+    for (i <- Range(0, destination.length - 1)) {
       buff.remove(0)
       val leftDestination = buff.toArray
-      allPath ++= gu.getShortestPath(destination(i),leftDestination,subgraph).collect
+      allPath ++= gu.getShortestPath(destination(i), leftDestination, subgraph).collect
     }
 
     print(allPath.mkString)
