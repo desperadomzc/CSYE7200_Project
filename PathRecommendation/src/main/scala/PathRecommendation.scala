@@ -1,3 +1,4 @@
+import com.google.inject.spi.ConvertedConstantBinding
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib.ShortestPaths
 import org.apache.spark.graphx.lib.ShortestPaths.SPMap
@@ -15,10 +16,23 @@ case class GraphUtils(graph: Graph[Int, Int]) {
     graph.subgraph(vpred = (vid, v) => vid <= scopeRight && vid >= scopeLeft)
   }
 
-  def getShortestPath(src: Int, target: Array[Int], g: Graph[Int, Int]) = {
-    ShortestPaths.run(g, Seq(src))
-      .vertices
-      .filter({ case (vid, v) => target.contains(vid) })
+  def filter(res: ArrayBuffer[(VertexId, SPMap)], destination: Array[VertexId], maps: Array[(VertexId, SPMap)])={
+    for (i <- Range(0, destination.length - 1)) {
+      val src: Array[(VertexId, SPMap)] = maps.filter({ case (vid, v) => vid == i })
+      for (j <-Range(i+1, destination.length - 1)) {
+        val path: Map[VertexId, PartitionID] = src(0)._2.filterKeys({case x => x==destination(j)})
+        res += destination(i) -> path
+      }
+    }
+    res
+  }
+
+  def getShortestPath(g: Graph[Int, Int], src: VertexId, target: Array[VertexId]) = {
+    val shortGraph: Graph[SPMap, PartitionID] = ShortestPaths.run(g, target.toSeq)
+    val shortVertex: VertexRDD[SPMap] = shortGraph.vertices
+    val all = (target.+:(src))
+    val maps: Array[(VertexId, SPMap)] = shortVertex.filter({ case (vid, v) => all.contains(vid) }).collect
+    maps
   }
 
   def shortestPathBetween(src: Int, target: Int, g: Graph[Int, Int]) = {
@@ -50,12 +64,12 @@ object PathRecommendation extends App {
     }
 
     println("Please input your location nodeId:")
-    val location = Source.stdin.bufferedReader().readLine().toInt
+    val location: VertexId = Source.stdin.bufferedReader().readLine().toInt
     println("Your location is at Node: No." + location)
 
     println("Please enter the number of destinations today:")
     val len = Source.stdin.bufferedReader().readLine().toInt
-    val pointList = new Array[Int](len)
+    val pointList = new Array[VertexId](len)
     for (i <- Range(0, len)) {
       println("Please enter the No." + (i + 1) + " destinations:")
       pointList(i) = Source.stdin.bufferedReader().readLine().toInt
@@ -69,10 +83,10 @@ object PathRecommendation extends App {
 
   override def main(args: Array[String]): Unit = {
     val data = userData
-    val startpoint = data._1
-    val destination = data._2
-    val from = data._3
-    val to = data._4
+    val startpoint: VertexId = data._1
+    val destination: Array[VertexId] = data._2
+    val from: PartitionID = data._3
+    val to: PartitionID = data._4
 
     // path for Windows
     val datapath = "data\\roadNet-PA.txt"
@@ -88,18 +102,9 @@ object PathRecommendation extends App {
     val gu = new GraphUtils(pa)
 
     val subgraph = gu.getSubgraph(pa, from, to)
+//    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(src, destination, subgraph).collect
 
-    //    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(startpoint,destination,subgraph).collect
-    val allPath: ArrayBuffer[(VertexId, SPMap)] = new ArrayBuffer[(VertexId, SPMap)]()
-
-    val buff = destination.toBuffer
-
-    for (i <- Range(0, destination.length - 1)) {
-      buff.remove(0)
-      val leftDestination = buff.toArray
-      allPath ++= gu.getShortestPath(destination(i), leftDestination, subgraph).collect
-    }
-
-    print(allPath.mkString)
+    val res = gu.getShortestPath(subgraph,startpoint,destination)
+    println(res.mkString)
   }
 }
