@@ -53,8 +53,13 @@ object PathRecommendation extends App {
     val startpoint = userData._1
     val destination = userData._2
 
+    // path for Windows
     val datapath = "data\\roadNet-PA.txt"
     val testpath = "data\\test.txt"
+
+    // path for Mac
+    val datapath = "data/roadNet-PA.txt"
+    val testpath = "data/test.txt"
 
     val sc = new SparkContext(new SparkConf().setAppName("pathfinder").setMaster("local[*]"))
     val ca: Graph[PartitionID, PartitionID] = readGraph(datapath, sc)
@@ -74,34 +79,8 @@ object PathRecommendation extends App {
       .collect
       .mkString
 
-    val shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
-      .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkString
 
-    val shortPath2 = ShortestPaths.run(subgraph2, Seq(1))
-      .vertices
-      .filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkStringval shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
-      .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkString
 
-    val shortPath2 = ShortestPaths.run(subgraph2, Seq(1))
-      .vertices
-      .filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkStringval shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
-      .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkString
-
-    val shortPath2 = ShortestPaths.run(subgraph2, Seq(1))
-      .vertices
-      .filter({ case (vid, v) => destination.contains(vid.toInt) })
-      .collect
-      .mkString
 
 
     //    (200,Map())(100,Map())(1000,Map())(300,Map()) 1000
