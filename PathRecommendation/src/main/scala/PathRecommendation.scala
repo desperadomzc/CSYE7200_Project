@@ -104,12 +104,5 @@ object PathRecommendation extends App {
       .filter({ case (vid, v) => destination.contains(vid.toInt) })
       .collect
       .mkString
-
-
-
-
-
-    //    (200,Map())(100,Map())(1000,Map())(300,Map()) 1000
-    //    (200,Map(1 -> 42))(100,Map(1 -> 48))(1000,Map(1 -> 32))(300,Map(1 -> 48)) 10000
   }
 }
