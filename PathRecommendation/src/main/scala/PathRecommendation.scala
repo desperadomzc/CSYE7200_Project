@@ -74,6 +74,36 @@ object PathRecommendation extends App {
       .collect
       .mkString
 
+    val shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
+      .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
+      .collect
+      .mkString
+
+    val shortPath2 = ShortestPaths.run(subgraph2, Seq(1))
+      .vertices
+      .filter({ case (vid, v) => destination.contains(vid.toInt) })
+      .collect
+      .mkStringval shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
+      .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
+      .collect
+      .mkString
+
+    val shortPath2 = ShortestPaths.run(subgraph2, Seq(1))
+      .vertices
+      .filter({ case (vid, v) => destination.contains(vid.toInt) })
+      .collect
+      .mkStringval shortPath1 = ShortestPaths.run(subgraph1, Seq(1))
+      .vertices.filter({ case (vid, v) => destination.contains(vid.toInt) })
+      .collect
+      .mkString
+
+    val shortPath2 = ShortestPaths.run(subgraph2, Seq(1))
+      .vertices
+      .filter({ case (vid, v) => destination.contains(vid.toInt) })
+      .collect
+      .mkString
+
+
     //    (200,Map())(100,Map())(1000,Map())(300,Map()) 1000
     //    (200,Map(1 -> 42))(100,Map(1 -> 48))(1000,Map(1 -> 32))(300,Map(1 -> 48)) 10000
   }
