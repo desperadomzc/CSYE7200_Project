@@ -40,6 +40,16 @@ case class GraphUtils(graph: Graph[Int, Int]) {
       .vertices
       .filter({ case (vid, v) => vid == target })
   }
+
+  def findPath(src: VertexId, maps: Array[(VertexId, SPMap)],desNum: Int): Unit ={
+
+  }
+
+  def DFS(destination: Array[VertexId]): Unit ={
+
+  }
+
+
 }
 
 object PathRecommendation extends App {
@@ -104,7 +114,7 @@ object PathRecommendation extends App {
     val subgraph = gu.getSubgraph(pa, from, to)
 //    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(src, destination, subgraph).collect
 
-    val res = gu.getShortestPath(subgraph,startpoint,destination)
+    val res: Array[(VertexId, SPMap)] = gu.getShortestPath(subgraph,startpoint,destination)
     println(res.mkString)
   }
 }
