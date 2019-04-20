@@ -92,7 +92,6 @@ case class GraphUtils(graph: Graph[PartitionID, PartitionID]) {
   def DFS(destination: Array[VertexId]) = {
     def recurse(destination: Array[VertexId], start: Int, count: Int, temp: ArrayList[VertexId], res: ArrayList[ArrayList[VertexId]]): Unit = {
       if (count == 0) {
-        print(temp)
         res.add(new util.ArrayList[VertexId](temp))
       } else {
         for (i <- Range(0, destination.length)) {
@@ -112,28 +111,32 @@ case class GraphUtils(graph: Graph[PartitionID, PartitionID]) {
   }
 
   def findOnePath(src: VertexId, maps: Array[(VertexId, SPMap)], destination: Array[VertexId]) = {
-    var minPath: ArrayBuffer[(VertexId, SPMap)] = new ArrayBuffer[(VertexId, SPMap)]()
-    val max = 0
+    var minPath = new ArrayBuffer[(VertexId,VertexId)]()
+    val min = Int.MaxValue
     //the path from the startpoint
     val fromSrc = maps.filter({ case (vid, v) => vid == src })(0)
     //the path between all destinations
     val dess: util.ArrayList[util.ArrayList[VertexId]] = DFS(destination)
     for (p <- Range(0, dess.size())) {
-      val path: util.ArrayList[VertexId] = dess(p)
-      var sumlen = fromSrc._2.get(path(0)).get
-      val onepath =  new ArrayBuffer[(VertexId, SPMap)]()
+      val path: util.ArrayList[VertexId] = dess.get(p)
+      var sumlen = fromSrc._2.get(path.get(0)).get
+      val onepath = new ArrayBuffer[(VertexId, VertexId)]()
+      onepath += src -> path.get(0)
       for (i <- Range(0, destination.length - 1)) {
-        val pi: VertexId = path(i)
-        val pii: VertexId = path(i + 1)
-        val m: (VertexId, SPMap) = maps.filter({ case (vid, map) => vid == pi && map.get(pii) != 0})(0)
-        val len = m._2.filterKeys(_ == pii).get(pii)
-        sumlen += len.get
-        onepath += m
+        val pi: VertexId = path.get(i)
+        val pii: VertexId = path.get(i + 1)
+        val m: Map[VertexId, PartitionID] = maps.filter(_._1 == pi)(0)._2.filterKeys(_ == pii)
+        val len = m.get(pii)
+        if(len != None){
+          sumlen += len.get
+          onepath += pi -> pii
+        }
       }
-      if(sumlen >= max){
+      if (sumlen < min) {
         minPath = onepath
       }
     }
+    minPath
   }
 }
 
@@ -212,6 +215,8 @@ object PathRecommendation extends App {
     val subgraph = gu.getSubgraph(pa, from, to)
     //    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(src, destination, subgraph).collect
 
-    //    val res: Array[(VertexId, SPMap)] = gu.getShortestPath(subgraph,startpoint,destination)
+    val res: Array[(VertexId, SPMap)] = gu.getShortestPath(subgraph, startpoint, destination)
+
+    print(gu.findOnePath(startpoint,res,destination))
   }
 }
