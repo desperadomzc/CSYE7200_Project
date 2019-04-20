@@ -1,24 +1,47 @@
-import com.google.inject.spi.ConvertedConstantBinding
 import org.apache.spark.graphx._
 import org.apache.spark.graphx.lib.ShortestPaths
 import org.apache.spark.graphx.lib.ShortestPaths.SPMap
 import org.apache.spark.{SparkConf, SparkContext}
-
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
-case class GraphUtils(graph: Graph[Int, Int]) {
-  def getComponents(graph: Graph[Int, Int]) = {
+/***
+  * GraphUtils case class and it's related methods
+  * @author Zechuan Miao & Lingyu Chen
+  * @param graph
+  */
+case class GraphUtils(graph: Graph[VertexId, VertexId]) {
+
+  /**
+    * Get the components of given Graph
+    * @param graph
+    * @return VertexRDD of the components
+    */
+  def getComponents(graph: Graph[VertexId, VertexId]) = {
     graph.connectedComponents().vertices
   }
 
-  def getSubgraph(graph: Graph[Int, Int], scopeLeft: Int, scopeRight: Int) = {
+  /**
+    * Given the graph and user provided nodes range, return the sub graph for operating
+    * @param graph
+    * @param scopeLeft
+    * @param scopeRight
+    * @return sub graph
+    */
+  def getSubgraph(graph: Graph[VertexId, VertexId], scopeLeft: VertexId, scopeRight: VertexId) = {
     graph.subgraph(vpred = (vid, v) => vid <= scopeRight && vid >= scopeLeft)
   }
 
-  def filter(res: ArrayBuffer[(VertexId, SPMap)], destination: Array[VertexId], maps: Array[(VertexId, SPMap)])={
+  /**
+    * Filter out the desired shortest paths based on given nodes
+    * @param res result to store the
+    * @param destination
+    * @param paths the shortest paths from sub graph
+    * @return Array buffer of (VertixId, SPMap)
+    */
+  def filter(res: ArrayBuffer[(VertexId, SPMap)], destination: Array[VertexId], paths: Array[(VertexId, SPMap)])={
     for (i <- Range(0, destination.length - 1)) {
-      val src: Array[(VertexId, SPMap)] = maps.filter({ case (vid, v) => vid == i })
+      val src: Array[(VertexId, SPMap)] = paths.filter({ case (vid, v) => vid == i })
       for (j <-Range(i+1, destination.length - 1)) {
         val path: Map[VertexId, PartitionID] = src(0)._2.filterKeys({case x => x==destination(j)})
         res += destination(i) -> path
@@ -27,16 +50,30 @@ case class GraphUtils(graph: Graph[Int, Int]) {
     res
   }
 
-  def getShortestPath(g: Graph[Int, Int], src: VertexId, target: Array[VertexId]) = {
-    val shortGraph: Graph[SPMap, PartitionID] = ShortestPaths.run(g, target.toSeq)
+  /**
+    * Get the shortest paths, the format of the sortest path is (VertexId, SPMap)
+    * @param graph
+    * @param src the start point
+    * @param target seq of destination points
+    * @return Array of shortest paths
+    */
+  def getShortestPath(graph: Graph[VertexId, VertexId], src: VertexId, target: Array[VertexId]) = {
+    val shortGraph: Graph[SPMap, PartitionID] = ShortestPaths.run(graph, target.toSeq)
     val shortVertex: VertexRDD[SPMap] = shortGraph.vertices
     val all = (target.+:(src))
     val maps: Array[(VertexId, SPMap)] = shortVertex.filter({ case (vid, v) => all.contains(vid) }).collect
     maps
   }
 
-  def shortestPathBetween(src: Int, target: Int, g: Graph[Int, Int]) = {
-    ShortestPaths.run(g, Seq(src))
+  /**
+    * Find the shortest path between two specific nodes
+    * @param src source node
+    * @param target target node
+    * @param graph
+    * @return
+    */
+  def shortestPathBetween(src: VertexId, target: VertexId, graph: Graph[VertexId, VertexId]) = {
+    ShortestPaths.run(graph, Seq(src))
       .vertices
       .filter({ case (vid, v) => vid == target })
   }
@@ -53,6 +90,10 @@ case class GraphUtils(graph: Graph[Int, Int]) {
 }
 
 object PathRecommendation extends App {
+  /**
+    * Read in data of users
+    * @return Tuple4 of required data: visiting area, location, destination list
+    */
   def userData = {
 
     var flag = true
@@ -87,6 +128,12 @@ object PathRecommendation extends App {
     (location, pointList, from, to)
   }
 
+  /**
+    * Read in the graph data, be careful that the reading process is directly, which means it follow the rule (source, target)
+    * @param path the relative path of graph file
+    * @param sc target SparkContext to store the graph data
+    * @return
+    */
   def readGraph(path: String, sc: SparkContext) = {
     GraphLoader.edgeListFile(sc, path)
   }
