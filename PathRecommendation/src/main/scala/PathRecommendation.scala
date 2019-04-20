@@ -10,8 +10,7 @@ import scala.io.Source
   * @author Zechuan Miao & Lingyu Chen
   * @param graph
   */
-case class GraphUtils(graph: Graph[VertexId, VertexId]) {
-
+case class GraphUtils(graph: Graph[PartitionID, PartitionID]){
   /**
     * Get the components of given Graph
     * @param graph
@@ -28,7 +27,7 @@ case class GraphUtils(graph: Graph[VertexId, VertexId]) {
     * @param scopeRight
     * @return sub graph
     */
-  def getSubgraph(graph: Graph[VertexId, VertexId], scopeLeft: VertexId, scopeRight: VertexId) = {
+  def getSubgraph(graph: Graph[PartitionID, PartitionID], scopeLeft: VertexId, scopeRight: VertexId) = {
     graph.subgraph(vpred = (vid, v) => vid <= scopeRight && vid >= scopeLeft)
   }
 
@@ -57,7 +56,7 @@ case class GraphUtils(graph: Graph[VertexId, VertexId]) {
     * @param target seq of destination points
     * @return Array of shortest paths
     */
-  def getShortestPath(graph: Graph[VertexId, VertexId], src: VertexId, target: Array[VertexId]) = {
+  def getShortestPath(graph: Graph[PartitionID, PartitionID], src: VertexId, target: Array[VertexId]) = {
     val shortGraph: Graph[SPMap, PartitionID] = ShortestPaths.run(graph, target.toSeq)
     val shortVertex: VertexRDD[SPMap] = shortGraph.vertices
     val all = (target.+:(src))
@@ -72,7 +71,7 @@ case class GraphUtils(graph: Graph[VertexId, VertexId]) {
     * @param graph
     * @return
     */
-  def shortestPathBetween(src: VertexId, target: VertexId, graph: Graph[VertexId, VertexId]) = {
+  def shortestPathBetween(src: VertexId, target: VertexId, graph: Graph[PartitionID, PartitionID]) = {
     ShortestPaths.run(graph, Seq(src))
       .vertices
       .filter({ case (vid, v) => vid == target })
@@ -154,7 +153,8 @@ object PathRecommendation extends App {
     val testpathmac = "data/test.txt"
 
     val sc = new SparkContext(new SparkConf().setAppName("pathfinder").setMaster("local[*]"))
-    val pa = readGraph(datapath, sc)
+    val pa: Graph[PartitionID, PartitionID] = readGraph(datapath, sc)
+
 
     val gu = new GraphUtils(pa)
 
