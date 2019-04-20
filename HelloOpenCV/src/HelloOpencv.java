@@ -172,14 +172,36 @@ public class HelloOpencv {
         return count+1;
     }
 
-//    public int getStartPoint(ImageUtils iu){
-//
-//    }
+    public Matrix getMatrix(ImageUtils iu,int rowNum, int colNum){
+        int rowlen = iu.getHeight()/rowNum;
+        int collen = iu.getWidth()/colNum;
+        Matrix matrix = new Matrix(rowNum,colNum);
+        for(int i = 0;i<rowNum;i++){
+            for(int j =0;j<colNum;j++){
+                int color = iu.getPixel((int)(rowlen*(i+0.5)),(int)(collen*(j+0.5)));
+//                System.out.print("row: "+(int)rowlen*(i+1)+"col:" +(int)collen*(j+1));
+//                for(double d: color) System.out.print(d+",");
+//                System.out.print("//");
+                int val = 0;
+                if(color>200 && color < 210){
+                    val = 1;
+                }else if(color>55 && color < 65){
+                    val = 0;
+                }else{
+                    val = 2;
+                    matrix.setStartX(i);
+                    matrix.setStartY(j);
+                }
+                matrix.setNode(i,j,val);
+            }
+        }
+        return matrix;
+    }
 
     public static void main(String args[]) {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         HelloOpencv h = new HelloOpencv();
-        ImageUtils iu = new ImageUtils("images\\origin.jpg");
+        ImageUtils iu = new ImageUtils("images\\origin2.jpg");
         ImageUtils bi = h.binarize(iu);
         bi.writeImg("images\\binarized.jpg");
         //colored:
@@ -199,5 +221,7 @@ public class HelloOpencv {
 
         //write them into jpg file
         precut.writeImg("images\\cut().jpg");
+        Matrix m = h.getMatrix(precut,h.getRowNum(cut2),h.getColNum(cut2));
+        m.writeIntoEdgeListTxt("images\\edgeList.txt","images\\startPoint.txt");
     }
 }

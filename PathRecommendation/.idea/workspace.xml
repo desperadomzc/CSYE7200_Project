@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba9307da-6ad1-455d-9141-79b19d7319bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/data/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/PathRecommendation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/PathRecommendation.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloOpenCV/images/edgeList.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HelloOpenCV/images/startPoint.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/images/binarized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/images/binarized.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/images/cut().jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/images/cut().jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/images/cut2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/images/cut2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/src/HelloOpencv.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/src/HelloOpencv.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/src/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/src/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,7 +31,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/PathRecommendation.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2565">
+            <state relative-caret-position="2120">
               <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -70,7 +76,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -107,7 +113,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555785573069" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555797924912" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -268,6 +274,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19168901" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -374,7 +381,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/PathRecommendation.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2565">
+        <state relative-caret-position="2120">
           <caret line="135" column="25" lean-forward="true" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
