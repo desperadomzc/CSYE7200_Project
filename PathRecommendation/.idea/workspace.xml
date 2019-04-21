@@ -2,145 +2,72 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba9307da-6ad1-455d-9141-79b19d7319bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/Solution.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/.idea/HelloOpenCV.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/.idea/LineConnector.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/images/binarized.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/images/binarized.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/images/cut().jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/images/cut().jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/images/cut2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/images/cut2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/src/HelloOpencv.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HelloOpenCV/src/LineConnector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HelloOpenCV/src/Test.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/edgeList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/edgeList.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/startPoint.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/startPoint.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/DFS.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$15c9595aeccf876d9f82.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$265b866cee8253fd5bf3.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$30a3e43aef193b72ceb2.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$3675833abb57c0714fb5.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$46d429d0537ae2f3bc05.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$704a598958e4ed5d448b.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$872fd5feb2a539ecb9cc.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$885a0594640c00a4e11e.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f47102745e873fa83d8f.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f884cddff5d5f0f4b327.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/PathRecommendation.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/PathRecommendation.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/Test.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/PathRecommendation$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/PathRecommendation$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/PathRecommendation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/PathRecommendation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/libraries/sbt__org_scala_lang_scala_library_2_12_8_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/modules/ReadGML-build.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/modules/ReadGML.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/sbt.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/scala_compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/build.sbt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/build.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$3657a61e5bddcaf4d70a$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$3657a61e5bddcaf4d70a.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$3657a61e5bddcaf4d70a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$7a872ccc01dac1337db9$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$7a872ccc01dac1337db9.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$7a872ccc01dac1337db9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$a74d00305b457d39c852$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$ddf3bc3ca5ce3a6e0fd1$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$ddf3bc3ca5ce3a6e0fd1.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$ddf3bc3ca5ce3a6e0fd1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$fa1ccd0b2c9c6fcc2de3$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$fa1ccd0b2c9c6fcc2de3.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/config-classes/$fa1ccd0b2c9c6fcc2de3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/default/readgml-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/default/readgml-build/scala_2.12/sbt_1.0/0.1.0-SNAPSHOT/resolved.xml.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-compile-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-compile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-optional.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-provided.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-runtime-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-runtime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-scala-tool.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-test-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/default-readgml-build-test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/ivy-report.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/scala-2.12/sbt-1.0/resolution-cache/reports/ivy-report.xsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/$global/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/ivySbt/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/projectDescriptors/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/update/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/$global/$global/discoveredMainClasses/data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/compile/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/copyResources/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/dependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/exportedProducts/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/internalDependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/unmanagedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/compile/unmanagedJars/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/dependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/exportedProducts/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/fullClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/internalDependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/unmanagedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/project/target/streams/runtime/unmanagedJars/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/src/main/scala/gml.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/.history" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/classes/gml$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/classes/gml.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/default/readgml$sources/0.1/resolved.xml.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/default/readgml$sources/0.1/resolved.xml.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/default/readgml_2.12/0.1/resolved.xml.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/default/readgml_2.12/0.1/resolved.xml.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-compile-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-compile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-optional.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-provided.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-runtime-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-runtime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-scala-tool.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-test-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml$sources-test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-compile-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-compile.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-optional.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-provided.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-runtime-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-runtime.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-scala-tool.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-test-internal.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/default-readgml_2.12-test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/ivy-report.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/scala-2.12/resolution-cache/reports/ivy-report.xsl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/$global/dumpStructure/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/input_dsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/ivySbt/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/projectDescriptors/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/update/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/update/$global/streams/update_cache_2.12/inputs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/update/$global/streams/update_cache_2.12/output" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/compile/unmanagedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/compile/unmanagedJars/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/runtime/unmanagedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/runtime/unmanagedJars/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/test/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/test/managedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/test/unmanagedClasspath/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ReadGML/target/streams/test/unmanagedJars/$global/streams/export" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Untitled.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/PathRecommendation$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/PathRecommendation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/pathrecommendation$sources/0.1/resolved.xml.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/pathrecommendation$sources/0.1/resolved.xml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/pathrecommendation_2.11/0.1/resolved.xml.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/default/pathrecommendation_2.11/0.1/resolved.xml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-compile-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-compile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-optional.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-provided.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-runtime-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-runtime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-scala-tool.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-test-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation$sources-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-compile-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-compile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-optional.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-provided.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-runtime-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-runtime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-scala-tool.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-test-internal.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/default-pathrecommendation_2.11-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/ivy-report.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/resolution-cache/reports/ivy-report.xsl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/$global/dumpStructure/$global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/input_dsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/ivyConfiguration/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/projectDescriptors/$global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/ssExtractDependencies/$global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/update/$global/streams/update_cache_2.11/output" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/managedClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/unmanagedClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/unmanagedJars/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/runtime/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/runtime/managedClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/runtime/unmanagedClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/runtime/unmanagedJars/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/externalDependencyClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/managedClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/unmanagedClasspath/$global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/unmanagedJars/$global/streams/export" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -159,11 +86,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/edgeList.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="95">
-              <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -177,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/PathRecommendation.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="195" column="19" lean-forward="true" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
+            <state relative-caret-position="86">
+              <caret line="122" column="67" selection-start-line="122" selection-start-column="67" selection-end-line="122" selection-end-column="67" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
               </folding>
@@ -208,8 +135,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="182" />
-    <option name="y" value="37" />
+    <option name="x" value="181" />
+    <option name="y" value="36" />
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -254,7 +181,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555815927558" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555816783002" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -272,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DFS">
+  <component name="RunManager" selected="Application.PathRecommendation">
     <configuration name="DFS" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="DFS" />
       <module name="PathRecommendation" />
@@ -342,14 +269,14 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.DFS" />
       <item itemvalue="Application.PathRecommendation" />
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.DFS" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DFS" />
         <item itemvalue="Application.PathRecommendation" />
+        <item itemvalue="Application.DFS" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
@@ -416,7 +343,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20643431" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20643431" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -425,16 +352,16 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.43695015" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34750733" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3977695" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32991204" />
       <window_info anchor="bottom" id="sbt-shell-toolwindow" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32991204" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32991204" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.3240469" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -519,16 +446,6 @@
     <entry file="file://$PROJECT_DIR$/data/Solution.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/PathRecommendation.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="195" column="19" lean-forward="true" selection-start-line="195" selection-start-column="19" selection-end-line="195" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/DFS.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -549,7 +466,17 @@
     <entry file="file://$PROJECT_DIR$/data/edgeList.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/PathRecommendation.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="122" column="67" selection-start-line="122" selection-start-column="67" selection-end-line="122" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
