@@ -32,7 +32,7 @@ The solution for the road network path recommendation is:
   
   •	Filter the shortest paths and then find out desired recommendation
 
-/n
+
 
 Project Structure:
 
