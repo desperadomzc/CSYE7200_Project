@@ -198,21 +198,20 @@ public class HelloOpencv {
         return matrix;
     }
 
-    public static void main(String args[]) {
+    public void run (String imagePath){
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        HelloOpencv h = new HelloOpencv();
-        ImageUtils iu = new ImageUtils("images\\origin2.jpg");
-        ImageUtils bi = h.binarize(iu);
+        ImageUtils iu = new ImageUtils(imagePath);
+        ImageUtils bi = binarize(iu);
         bi.writeImg("images\\binarized.jpg");
         //colored:
-        Rect r1 = h.cutImg(bi);
+        Rect r1 = cutImg(bi);
         ImageUtils precut = new ImageUtils();
         precut.setMat(new Mat(iu.getMat(), r1));
         //binarized version:
         ImageUtils cut1 = new ImageUtils();
         cut1.setMat(new Mat(bi.getMat(), r1));
         //colored 2:
-        Rect r2 = h.cutImg2(cut1);
+        Rect r2 = cutImg2(cut1);
         precut.setMat(new Mat(precut.getMat(), r2));
         //binarized 2:
         ImageUtils cut2 = new ImageUtils();
@@ -221,7 +220,14 @@ public class HelloOpencv {
 
         //write them into jpg file
         precut.writeImg("images\\cut().jpg");
-        Matrix m = h.getMatrix(precut,h.getRowNum(cut2),h.getColNum(cut2));
-        m.writeIntoEdgeListTxt("images\\edgeList.txt","images\\startPoint.txt");
+        Matrix m = getMatrix(precut,getRowNum(cut2),getColNum(cut2));
+        System.out.print(m.toString());
+        m.writeIntoEdgeListTxt("F:\\Git\\local_repository\\CSYE7200_Project\\PathRecommendation\\data\\edgeList.txt","F:\\Git\\local_repository\\CSYE7200_Project\\PathRecommendation\\data\\startPoint.txt");
+    }
+
+    public static void main(String args[]) {
+        //"images\\origin3.jpg"
+        HelloOpencv h = new HelloOpencv();
+        h.run("images\\origin3.jpg");
     }
 }

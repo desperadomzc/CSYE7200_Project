@@ -110,6 +110,35 @@ case class GraphUtils(graph: Graph[PartitionID, PartitionID]) {
     res
   }
 
+  def gameSolver(g:Graph[PartitionID,PartitionID],start:Int) ={
+    val count = (g.numVertices - 1).toInt;
+    val visited = new util.ArrayList[VertexId]()
+    visited.add(start)
+    val temp = new util.ArrayList[VertexId]()
+    temp.add(start)
+    val res = new ArrayList[ArrayList[VertexId]]()
+    def dfs(g:Graph[PartitionID,PartitionID], visited:ArrayList[VertexId], temp:ArrayList[VertexId], start:Int, count : Int, res:ArrayList[ArrayList[VertexId]]):Unit ={
+      if(count == 0){
+        print(temp)
+        res.add(new ArrayList(temp))
+      }else{
+        println(start)
+        val directions: Array[VertexId] = g.edges.filter({case Edge(a,b,c) => a == start}).collect.map({case Edge(a,b,c) => b})
+//        println(directions.mkString)
+        for(i <- Range(0,directions.length) if !visited.contains(directions(i))){
+          println(i)
+          temp.add(directions(i))
+          visited.add(directions(i))
+          dfs(g,visited,temp,start+1,count-1,res)
+          temp.remove(temp.size()-1)
+          visited.remove(visited.size()-1)
+        }
+      }
+    }
+    dfs(g,visited,temp,start,count,res)
+    res
+  }
+
   def findOnePath(src: VertexId, maps: Array[(VertexId, SPMap)], destination: Array[VertexId]) = {
     var minPath = new ArrayBuffer[(VertexId,VertexId)]()
     val min = Int.MaxValue
@@ -192,31 +221,38 @@ object PathRecommendation extends App {
   }
 
   override def main(args: Array[String]): Unit = {
-    val data = userData
-    val startpoint: VertexId = data._1
-    val destination: Array[VertexId] = data._2
-    val from: PartitionID = data._3
-    val to: PartitionID = data._4
+//    val data = userData
+//    val startpoint: VertexId = data._1
+//    val destination: Array[VertexId] = data._2
+//    val from: PartitionID = data._3
+//    val to: PartitionID = data._4
 
     // path for Windows
     val datapath = "data\\roadNet-PA.txt"
     val testpath = "data\\test.txt"
+    val edgePath = "data\\edgeList.txt"
+    val startPath = "data\\startPoint.txt"
 
     // path for Mac
     val datapathmac = "data/roadNet-PA.txt"
     val testpathmac = "data/test.txt"
 
     val sc = new SparkContext(new SparkConf().setAppName("pathfinder").setMaster("local[*]"))
-    val pa: Graph[PartitionID, PartitionID] = readGraph(datapath, sc)
 
-
-    val gu = new GraphUtils(pa)
-
-    val subgraph = gu.getSubgraph(pa, from, to)
-    //    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(src, destination, subgraph).collect
-
-    val res: Array[(VertexId, SPMap)] = gu.getShortestPath(subgraph, startpoint, destination)
-
-    print(gu.findOnePath(startpoint,res,destination))
+    val gameGraph = readGraph(edgePath,sc)
+    val start = Source.fromFile(startPath,"UTF-8").getLines().next().toInt
+    val gu = new GraphUtils(gameGraph)
+    print(gu.gameSolver(gameGraph,start))
+//    val pa: Graph[PartitionID, PartitionID] = readGraph(datapath, sc)
+//
+//
+//    val gu = new GraphUtils(pa)
+//
+//    val subgraph = gu.getSubgraph(pa, from, to)
+//    //    val fromStart: Array[(VertexId, SPMap)] = gu.getShortestPath(src, destination, subgraph).collect
+//
+//    val res: Array[(VertexId, SPMap)] = gu.getShortestPath(subgraph, startpoint, destination)
+//
+//    print(gu.findOnePath(startpoint,res,destination))
   }
 }

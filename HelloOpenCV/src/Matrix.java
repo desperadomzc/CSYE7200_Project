@@ -67,8 +67,7 @@ public class Matrix {
             psedge.append(sb);
             File startfile = new File(startpath);
             PrintStream psstart = new PrintStream(new FileOutputStream(startfile));
-            psstart.print("#Name:startPoint " + "\n" + "#@author: Miao,Linh" + "\n");
-            String xy = startX + "" + startY;
+            String xy = (startX+1) + "" + (startY+1);
             psstart.append(xy);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
