@@ -1,4 +1,5 @@
 import java.awt.JobAttributes.DestinationType
+import java.io.{File, PrintWriter}
 import java.util
 import java.util.ArrayList
 
@@ -110,35 +111,6 @@ case class GraphUtils(graph: Graph[PartitionID, PartitionID]) {
     res
   }
 
-  def gameSolver(g:Graph[PartitionID,PartitionID],start:Int) ={
-    val count = (g.numVertices - 1).toInt;
-    val visited = new util.ArrayList[VertexId]()
-    visited.add(start)
-    val temp = new util.ArrayList[VertexId]()
-    temp.add(start)
-    val res = new ArrayList[ArrayList[VertexId]]()
-    def dfs(g:Graph[PartitionID,PartitionID], visited:ArrayList[VertexId], temp:ArrayList[VertexId], start:Int, count : Int, res:ArrayList[ArrayList[VertexId]]):Unit ={
-      if(count == 0){
-        print(temp)
-        res.add(new ArrayList(temp))
-      }else{
-        println(start)
-        val directions: Array[VertexId] = g.edges.filter({case Edge(a,b,c) => a == start}).collect.map({case Edge(a,b,c) => b})
-//        println(directions.mkString)
-        for(i <- Range(0,directions.length) if !visited.contains(directions(i))){
-          println(i)
-          temp.add(directions(i))
-          visited.add(directions(i))
-          dfs(g,visited,temp,start+1,count-1,res)
-          temp.remove(temp.size()-1)
-          visited.remove(visited.size()-1)
-        }
-      }
-    }
-    dfs(g,visited,temp,start,count,res)
-    res
-  }
-
   def findOnePath(src: VertexId, maps: Array[(VertexId, SPMap)], destination: Array[VertexId]) = {
     var minPath = new ArrayBuffer[(VertexId,VertexId)]()
     val min = Int.MaxValue
@@ -170,6 +142,43 @@ case class GraphUtils(graph: Graph[PartitionID, PartitionID]) {
 }
 
 object PathRecommendation extends App {
+  def LineConnector(edgePath:String,startPath:String,solutionPath:String): Unit ={
+    def gameSolver(g: Graph[PartitionID, PartitionID], start: Int) = {
+      val count = (g.numVertices - 1).toInt;
+      val visited = new util.ArrayList[VertexId]()
+      visited.add(start)
+      val temp = new util.ArrayList[VertexId]()
+      temp.add(start)
+      val res = new ArrayList[ArrayList[VertexId]]()
+
+      def dfs(g: Graph[PartitionID, PartitionID], visited: ArrayList[VertexId], temp: ArrayList[VertexId], start: VertexId, count: Int, res: ArrayList[ArrayList[VertexId]]): Boolean = {
+        if (count == 0) {
+          res.add(new ArrayList(temp))
+          true
+        } else {
+          val directions: Array[VertexId] = g.edges.filter({ case Edge(a, b, c) => a == start }).collect.map({ case Edge(a, b, c) => b })
+          for (i <- Range(0, directions.length) ) {
+            val d: VertexId = directions(i)
+            if(!visited.contains(d)){
+              temp.add(d)
+              visited.add(directions(i))
+              if (dfs(g, visited, temp, directions(i), count - 1, res)) true
+              temp.remove(temp.size() - 1)
+              visited.remove(visited.size() - 1)
+            }
+          }
+          return false
+        }
+      }
+
+      dfs(g, visited, temp, start, count, res)
+      res
+    }
+    val sc = new SparkContext(new SparkConf().setAppName("pathfinder").setMaster("local[*]"))
+    val gameGraph = readGraph(edgePath, sc)
+    val start = Source.fromFile(startPath, "UTF-8").getLines().next().toInt
+    println(gameSolver(gameGraph,start))
+  }
   /**
     * Read in data of users
     *
@@ -232,17 +241,14 @@ object PathRecommendation extends App {
     val testpath = "data\\test.txt"
     val edgePath = "data\\edgeList.txt"
     val startPath = "data\\startPoint.txt"
+    val solutionPath = "data\\Solution.txt"
 
     // path for Mac
     val datapathmac = "data/roadNet-PA.txt"
     val testpathmac = "data/test.txt"
 
-    val sc = new SparkContext(new SparkConf().setAppName("pathfinder").setMaster("local[*]"))
+    LineConnector(edgePath,startPath,solutionPath)
 
-    val gameGraph = readGraph(edgePath,sc)
-    val start = Source.fromFile(startPath,"UTF-8").getLines().next().toInt
-    val gu = new GraphUtils(gameGraph)
-    print(gu.gameSolver(gameGraph,start))
 //    val pa: Graph[PartitionID, PartitionID] = readGraph(datapath, sc)
 //
 //
