@@ -8,13 +8,21 @@ We use Depth First Search algorithm to solve the game problem. However, when we 
 And also, we use the Spark GraphX to do the distributed graph calculation.
 
 The solution for the game part is:
+
   •	Convert the picture to pixel matrix for system to operate by Image Parsing based on OpenCV
+  
   •	Convert the pixel matrix to sparse matrix and then write into .txt file 
+
   •	Utilize Spark GraphX GraphLoader to read the .txt file
+  
   •	Out put the solution
 
 The solution for the road network path recommendation is:
+
   •	Utilize Spark GraphX GraphLoader to read the .txt file of Pennsylvania road network
+  
   •	Extract subgraph based on the spots that the user plan to visit
+  
   •	Get the shortest paths from all the nodes in subgraph to the given start point
+  
   •	Filter the shortest paths and then find out desired recommendation
