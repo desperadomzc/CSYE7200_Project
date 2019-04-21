@@ -31,3 +31,12 @@ The solution for the road network path recommendation is:
   •	Get the shortest paths from all the nodes in subgraph to the given start point
   
   •	Filter the shortest paths and then find out desired recommendation
+
+
+Project Structure:
+
+LineConnector: the module to convert game screen shoots to matrixes and .txt files
+PathRecommendation: the module to do the graph calculation and encapsulations of GraphUtils and DFS methods
+
+If you need to run the project:
+Feel free to change the path for .txt files to your prefered relative paths. And be careful that LineConnector based on OpenCV for Java, and PathRecommendation based on Scala 2.11 and Spark 2.4
