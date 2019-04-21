@@ -33,6 +33,7 @@ The solution for the road network path recommendation is:
   •	Filter the shortest paths and then find out desired recommendation
 
 
+
 Project Structure:
 
 LineConnector: the module to convert game screen shoots to matrixes and .txt files
