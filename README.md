@@ -1,5 +1,6 @@
 # CSYE7200_Project
-scala final project
+##scala final project--Path Recommend System
+
 The idea of our system originated from the game Line Connector, which requires players to find the only path that traverse all nodes of the picture with given start point and without repetition. Respectively, we will construct a system to provide path recommendation for users to visit specific spots they plan to visit with a shortest path to visit all the spots without repetition.
 We use Depth First Search algorithm to solve the game problem. However, when we try to migrate our idea to the real-world big data problem, we need to improve some part of the algorithm:
 •	For that DFS is some kind of violent enumeration, we need to reduce our possible traverse cases for the big data problem
