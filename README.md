@@ -1,4 +1,5 @@
-# CSYE7200_Project *[Demo](https://github.com/desperadomzc/CSYE7200_Project/blob/master/Project%20Demo%20-%20Path%20Recommend.pptx)*
+# CSYE7200_Project 
+*[Demo](https://github.com/desperadomzc/CSYE7200_Project/blob/master/Project%20Demo%20-%20Path%20Recommend.pptx)*
 Scala Final Project--Path Recommend System
 
 The idea of our system originated from the game Line Connector, which requires players to find the only path that traverse all nodes of the picture with given start point and without repetition. Respectively, we will construct a system to provide path recommendation for users to visit specific spots they plan to visit with a shortest path to visit all the spots without repetition.
